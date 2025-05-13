@@ -70,17 +70,31 @@ const columnsResizableDirective = {
     
     const handleResize = (e: MouseEvent) => {
       if (!moving) return;
-
+    
       const th = ths[movingIndex];
       const nextTh = ths[movingIndex + 1];
       const bar = bars[movingIndex] as HTMLElement;
-
+    
       const delta = e.movementX;
-      th.style.width = `${cutPx(th.style.width) + delta}px`;
-      nextTh.style.width = `${cutPx(nextTh.style.width) - delta}px`;
+      const newThWidth = cutPx(th.style.width) + delta;
+      const newNextThWidth = cutPx(nextTh.style.width) - delta;
+    
+      th.style.width = `${newThWidth}px`;
+      nextTh.style.width = `${newNextThWidth}px`;
       bar.style.left = `${nextTh.offsetLeft - 4 + delta}px`;
+    
+      // Emit event from the root element where the directive is applied
+      el.dispatchEvent(new CustomEvent('column-resized', {
+        detail: {
+          index: movingIndex,
+          width: newThWidth,
+          nextIndex: movingIndex + 1,
+          nextWidth: newNextThWidth
+        },
+        bubbles: true
+      }));
     };
-
+    
     resizeContainer.addEventListener('mousemove', handleResize);
     table.addEventListener('mousemove', handleResize);
   },

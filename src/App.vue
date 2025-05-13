@@ -1,8 +1,13 @@
+<script setup lang="ts">
+const onColumnResized = (event: CustomEvent) => {
+  console.log('Resized column:', event.detail);
+}
+</script>
 <template>
   <div id="app">
     <div class="container">
       <div>Default</div>
-      <table border="1" class="table" v-columns-resizable>
+      <table border="1" class="table" v-columns-resizable @column-resized="onColumnResized">
         <thead>
           <tr>
             <th width="50%">name</th>
