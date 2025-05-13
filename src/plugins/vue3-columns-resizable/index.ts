@@ -1,7 +1,7 @@
-import type { App, DirectiveBinding } from 'vue';
+import type { App } from 'vue';
 
 const columnsResizableDirective = {
-  mounted(el: HTMLElement, binding: DirectiveBinding) {
+  mounted(el: HTMLElement) {
     const nodeName = el.nodeName;
     if (!['TABLE', 'THEAD'].includes(nodeName)) return;
 
