@@ -1,0 +1,58 @@
+{
+  "name": "vue3-columns-resizable",
+  "version": "1.0.0",
+  "description": "Vue 3 directive to resize HTML table columns",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riz007/vue3-columns-resizable"
+  },
+  "bugs": {
+    "url": "https://github.com/riz007/vue3-columns-resizable/issues"
+  },
+  "homepage": "https://github.com/riz007/vue3-columns-resizable#readme",
+  "main": "dist/vue3-columns-resizable.umd.js",
+  "module": "dist/vue3-columns-resizable.es.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/vue3-columns-resizable.es.js",
+      "require": "./dist/vue3-columns-resizable.umd.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["vue3", "directive", "table", "resize", "columns"],
+"author": {
+  "name": "Riz",
+  "email": "rizwanulrudra@gmail.com",
+  "url": "https://github.com/riz007"
+},
+"contributors": [
+  {
+    "name": "Fuxy526",
+    "url": "https://github.com/Fuxy526",
+    "comment": "Original author of vue-columns-resizable"
+  }
+],
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vue/tsconfig": "^0.7.0",
+    "sass-embedded": "^1.88.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vue-tsc": "^2.2.8"
+  }
+}
