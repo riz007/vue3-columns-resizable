@@ -1,6 +1,6 @@
 {
   "name": "vue3-columns-resizable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue 3 directive to resize HTML table columns",
   "repository": {
     "type": "git",
