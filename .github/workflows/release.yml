@@ -1,22 +1,19 @@
-name: Build and Release
+name: Build and Publish to npm
 
 on:
   push:
     branches:
       - main
-    # Optional: only trigger when version changes
-    # paths:
-    #   - 'package.json'
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -25,8 +22,13 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Type Check
+      - name: Build
         run: yarn build
+
+      - name: Set up npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish to npm
         run: npm publish
