@@ -50,18 +50,18 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "vue": "^3.5.29"
+    "vue": "3.5.29"
   },
   "devDependencies": {
-    "@types/node": "^25.3.3",
-    "@vitejs/plugin-vue": "^6.0.4",
-    "@vue/test-utils": "^2.4.6",
-    "@vue/tsconfig": "^0.8.1",
-    "jsdom": "^28.1.0",
-    "sass-embedded": "^1.97.3",
+    "@types/node": "25.3.3",
+    "@vitejs/plugin-vue": "6.0.4",
+    "@vue/test-utils": "2.4.6",
+    "@vue/tsconfig": "0.8.1",
+    "jsdom": "28.1.0",
+    "sass-embedded": "1.97.3",
     "typescript": "~5.9.3",
-    "vite": "^7.3.1",
-    "vitest": "^4.0.18",
-    "vue-tsc": "^3.2.5"
+    "vite": "7.3.1",
+    "vitest": "4.0.18",
+    "vue-tsc": "3.2.5"
   }
 }
