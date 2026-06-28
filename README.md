@@ -92,8 +92,14 @@ To build the library:
 yarn build
 ```
 
-```build
+To run the demo app in dev mode:
+```bash
 yarn dev
+```
+
+To run the tests:
+```bash
+yarn test
 ```
 
 ## 🔗 License & Attribution

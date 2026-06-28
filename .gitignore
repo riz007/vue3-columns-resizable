@@ -13,6 +13,15 @@ dist-ssr
 *.local
 .npmrc
 
+# Yarn (Plug'n'Play) generated state — regenerated on install
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
